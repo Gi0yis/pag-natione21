@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- CSP Endurecido: Restricción de orígenes de imágenes y scripts -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' https://lh3.googleusercontent.com; script-src 'self' 'unsafe-inline' type='application/ld+json'; base-uri 'self'; form-action 'none';">
+    
+    <!-- SEO Meta Tags Básicos -->
+    <title>NATIONE21 | Psicólogo & Streamer</title>
+    <meta name="description" content="NATIONE21 - Psicólogo y Streamer. Transmisiones en vivo en Kick. Únete a nuestra comunidad y juega en stream.">
+    <meta name="keywords" content="NATIONE21, Psicólogo, Streamer, Kick, Gaming, Comunidad, Directos">
+    <meta name="author" content="NATIONE21">
+    <link rel="canonical" href="https://n21.gioyis.pro/">
+    <link rel="icon" href="https://lh3.googleusercontent.com/d/1Z0JH_jvsHzMKPhcbwwACZR8iet0AMXln" type="image/png">
+    
+    <!-- Open Graph / Redes Sociales -->
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="NATIONE21 | Psicólogo & Streamer">
+    <meta property="og:description" content="Transmisiones en vivo, gaming y psicología. Forma parte de la comunidad.">
+    <meta property="og:image" content="https://lh3.googleusercontent.com/d/1Z0JH_jvsHzMKPhcbwwACZR8iet0AMXln">
+    <meta property="og:url" content="https://n21.gioyis.pro/">
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@natione21psico">
+    <meta name="twitter:title" content="NATIONE21 | Psicólogo & Streamer">
+    <meta name="twitter:description" content="Transmisiones en vivo, gaming y psicología. Forma parte de la comunidad.">
+    <meta name="twitter:image" content="https://lh3.googleusercontent.com/d/1Z0JH_jvsHzMKPhcbwwACZR8iet0AMXln">
+
+    <!-- Marcado Estructurado JSON-LD (Schema.org) para indexación semántica -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "NATIONE21",
+      "jobTitle": "Psicólogo y Streamer",
+      "image": "https://lh3.googleusercontent.com/d/1Z0JH_jvsHzMKPhcbwwACZR8iet0AMXln",
+      "url": "https://n21.gioyis.pro/",
+      "sameAs": [
+        "https://kick.com/natione21",
+        "https://instagram.com/natione21",
+        "https://x.com/natione21psico",
+        "https://youtube.com/@NATIONE21",
+        "https://tiktok.com/@natione21psicologo"
+      ]
+    }
+    </script>
+
+    <!-- Fuentes y Recursos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-base: #0b0e0f;
+            --accent-kick: #53fc18;
+            --accent-kick-glow: rgba(83, 252, 24, 0.4);
+            --glass-bg: rgba(26, 30, 34, 0.4);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --glass-hover: rgba(83, 252, 24, 0.1);
+            --text-primary: #ffffff;
+            --text-secondary: #a0aab2;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-base);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 4rem 1.5rem;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .background-fx {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            background: 
+                radial-gradient(circle at 15% 50%, rgba(83, 252, 24, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 85% 30%, rgba(83, 252, 24, 0.05) 0%, transparent 50%);
+            animation: bg-drift 15s ease-in-out infinite alternate;
+        }
+
+        @keyframes bg-drift {
+            0% { transform: scale(1) translate(0, 0); }
+            100% { transform: scale(1.1) translate(-2%, 2%); }
+        }
+
+        .container {
+            width: 100%;
+            max-width: 580px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 1;
+        }
+
+        .avatar-container {
+            position: relative;
+            width: 130px;
+            height: 130px;
+            margin-bottom: 1.5rem;
+            border-radius: 50%;
+            padding: 4px;
+            background: linear-gradient(135deg, var(--accent-kick), #1a1e22);
+            box-shadow: 0 0 25px var(--accent-kick-glow);
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            background-color: #1a1e22; 
+            border: 2px solid var(--bg-base);
+            display: block; 
+        }
+
+        .profile-name {
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            background: linear-gradient(to right, #ffffff, var(--accent-kick));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .profile-bio {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 3rem;
+            max-width: 90%;
+            font-weight: 400;
+        }
+
+        .links-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .link-card {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding: 1.2rem 1.5rem;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .link-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background-color: var(--accent-kick);
+            transform: scaleY(0);
+            transform-origin: bottom;
+            transition: transform 0.3s ease;
+        }
+
+        @media (hover: hover) {
+            .link-card:hover {
+                transform: translateY(-4px);
+                background: var(--glass-hover);
+                border-color: rgba(83, 252, 24, 0.3);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 0 15px rgba(83, 252, 24, 0.1);
+            }
+            .link-card:hover::before { transform: scaleY(1); }
+            .link-card:hover .link-icon {
+                color: var(--bg-base);
+                background: var(--accent-kick);
+                box-shadow: 0 0 10px var(--accent-kick-glow);
+            }
+            .link-card:hover .link-arrow {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .link-card:active {
+            transform: scale(0.97);
+            background: var(--glass-hover);
+            border-color: rgba(83, 252, 24, 0.5);
+            transition: all 0.1s; 
+        }
+        .link-card:active::before { transform: scaleY(1); transition: transform 0.1s; }
+        .link-card:active .link-icon {
+            color: var(--bg-base);
+            background: var(--accent-kick);
+            box-shadow: 0 0 15px var(--accent-kick-glow);
+            transition: all 0.1s;
+        }
+        .link-card:active .link-arrow {
+            opacity: 1;
+            transform: translateX(0);
+            transition: all 0.1s;
+        }
+
+        .link-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            margin-right: 1.2rem;
+            font-size: 1.3rem;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .link-text {
+            flex-grow: 1;
+        }
+
+        .link-arrow {
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: all 0.3s ease;
+            color: var(--accent-kick);
+        }
+
+        .card-featured {
+            background: linear-gradient(145deg, rgba(83, 252, 24, 0.1) 0%, var(--glass-bg) 100%);
+            border-color: rgba(83, 252, 24, 0.4);
+            animation: pulse-border 2s infinite alternate;
+        }
+
+        .card-featured .link-icon {
+            color: var(--accent-kick);
+            background: rgba(83, 252, 24, 0.1);
+        }
+
+        @keyframes pulse-border {
+            0% { border-color: rgba(83, 252, 24, 0.2); }
+            100% { border-color: rgba(83, 252, 24, 0.6); }
+        }
+
+        .footer {
+            margin-top: 4rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            text-align: center;
+        }
+
+        .footer p {
+            opacity: 0.6;
+            margin-bottom: 0.4rem;
+        }
+
+        .dev-credit {
+            display: inline-block;
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            opacity: 0.3; 
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+
+        .dev-credit:hover {
+            opacity: 0.8;
+            color: var(--accent-kick);
+        }
+
+        @media (max-width: 480px) {
+            body { padding: 2rem 1rem; }
+            .profile-name { font-size: 1.8rem; }
+            .avatar-container { width: 110px; height: 110px; }
+            .link-card { font-size: 1rem; padding: 1rem 1.2rem; }
+            .link-icon { width: 35px; height: 35px; font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-fx"></div>
+
+    <main class="container">
+        <header class="avatar-container">
+            <img src="https://lh3.googleusercontent.com/d/1Z0JH_jvsHzMKPhcbwwACZR8iet0AMXln" 
+                alt="Logo y Avatar de NATIONE21" 
+                class="profile-img">
+        </header>
+        
+        <h1 class="profile-name">NATIONE21</h1>
+        <p class="profile-bio">
+            Psicólogo/Streamer Transmisiones en vivo 🛑 Forma parte de nuestra comunidad/familia y juega junto a nosotros en Stream.
+        </p>
+
+        <nav class="links-container" aria-label="Enlaces sociales">
+            <a href="https://kick.com/natione21" target="_blank" rel="noopener noreferrer" class="link-card card-featured">
+                <div class="link-icon"><i class="fa-solid fa-gamepad" aria-hidden="true"></i></div>
+                <span class="link-text">Kick (Stream)</span>
+                <i class="fa-solid fa-chevron-right link-arrow" aria-hidden="true"></i>
+            </a>
+            
+            <a href="https://instagram.com/natione21" target="_blank" rel="noopener noreferrer" class="link-card">
+                <div class="link-icon"><i class="fa-brands fa-instagram" aria-hidden="true"></i></div>
+                <span class="link-text">Instagram</span>
+                <i class="fa-solid fa-chevron-right link-arrow" aria-hidden="true"></i>
+            </a>
+
+            <a href="https://x.com/natione21psico" target="_blank" rel="noopener noreferrer" class="link-card">
+                <div class="link-icon"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></div>
+                <span class="link-text">X (Twitter)</span>
+                <i class="fa-solid fa-chevron-right link-arrow" aria-hidden="true"></i>
+            </a>
+
+            <a href="https://youtube.com/@NATIONE21" target="_blank" rel="noopener noreferrer" class="link-card">
+                <div class="link-icon"><i class="fa-brands fa-youtube" aria-hidden="true"></i></div>
+                <span class="link-text">YouTube</span>
+                <i class="fa-solid fa-chevron-right link-arrow" aria-hidden="true"></i>
+            </a>
+
+            <a href="https://tiktok.com/@natione21psicologo" target="_blank" rel="noopener noreferrer" class="link-card">
+                <div class="link-icon"><i class="fa-brands fa-tiktok" aria-hidden="true"></i></div>
+                <span class="link-text">TikTok</span>
+                <i class="fa-solid fa-chevron-right link-arrow" aria-hidden="true"></i>
+            </a>
+
+            <a href="https://discord.gg/r9Syn9yg5J" target="_blank" rel="noopener noreferrer" class="link-card">
+                <div class="link-icon"><i class="fa-brands fa-discord" aria-hidden="true"></i></div>
+                <span class="link-text">Servidor de Discord</span>
+                <i class="fa-solid fa-chevron-right link-arrow" aria-hidden="true"></i>
+            </a>
+        </nav>
+
+        <footer class="footer">
+            <p>NATIONE21 © 2026</p>
+            <a href="https://gioyis.pro" target="_blank" rel="noopener noreferrer" class="dev-credit">Desarrollado por Gioyis</a>
+        </footer>
+    </main>
+</body>
+</html>
